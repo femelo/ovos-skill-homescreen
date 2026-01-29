@@ -8,7 +8,7 @@ from pyhtmx import Div
 from pyhtmx_gui.kit import Page, SessionItem
 
 
-CACHE_DIR = "/cache/ovos-skill-homescreen.openvoiceos/py-htmx"
+CACHE_DIR = "/cache/skill-ovos-homescreen.openvoiceos/py-htmx"
 
 
 # Background image

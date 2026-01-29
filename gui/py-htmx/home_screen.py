@@ -5,7 +5,7 @@ from pyhtmx import Div, Img, Input, Label, Ul, Li, A, Br, H1, P, Button  # type:
 from pyhtmx_gui.kit import Widget, WidgetType, SessionItem, Control, Page
 
 
-CACHE_DIR = "/cache/ovos-skill-homescreen.openvoiceos/py-htmx"
+CACHE_DIR = "/cache/skill-ovos-homescreen.openvoiceos/py-htmx"
 
 
 # Background image

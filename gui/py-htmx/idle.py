@@ -8,8 +8,8 @@ from pyhtmx_gui.types import DOMEvent
 from pyhtmx_gui.kit import SessionItem, Control, Widget, Page
 
 
-CACHE_DIR = "/cache/ovos-skill-homescreen.openvoiceos/py-htmx"
-
+CACHE_DIR = "/cache/skill-ovos-homescreen.openvoiceos/py-htmx"
+    
 
 # Weather icon mapping
 WEATHER_ICONS = {
