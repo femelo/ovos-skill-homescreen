@@ -6,6 +6,7 @@ from pyhtmx import Div, Input, Img, Script, Link, Ul, Li, H2
 from pyhtmx_gui.page_manager import PageManager
 from pyhtmx_gui.types import DOMEvent
 from pyhtmx_gui.kit import SessionItem, Control, Widget, Page
+from secrets import token_hex
 
 
 CACHE_DIR = "/cache/skill-ovos-homescreen.openvoiceos/py-htmx"
@@ -143,7 +144,7 @@ class WeatherWidget(Widget):
 
         # Weather icon
         weather_icon: Img = Img(
-            _id="weather-icon",  # unique element id
+            _id=f"weather-icon-{token_hex(4)}",  # unique element id
             src=self.weather_icon_src(),
             alt=self.weather_icon_alt(),
             width="auto",
@@ -183,7 +184,7 @@ class WeatherWidget(Widget):
         # Weather temperature text
         weather_temp_text: Div = Div(
             inner_content=self.weather_temperature(),
-            _id="weather-temp",
+            _id=f"weather-temp-{token_hex(4)}",  # unique element id
             _class=[
                 "text-[4vw]",
                 "leading-[8vw]",
