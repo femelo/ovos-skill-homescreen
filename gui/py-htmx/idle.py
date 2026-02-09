@@ -9,7 +9,7 @@ from pyhtmx_gui.kit import SessionItem, Control, Widget, Page
 from secrets import token_hex
 
 
-CACHE_DIR = "/cache/skill-ovos-homescreen.openvoiceos/py-htmx"
+CACHE_DIR = "/cache/ovos-skill-homescreen.openvoiceos/py-htmx"
     
 
 # Weather icon mapping
@@ -385,7 +385,7 @@ class HomeScreen(Page):
             # Reset text input value
             page_manager.update_attributes(
                 namespace="skill-ovos-homescreen.openvoiceos",
-                page_id="home_screen",
+                page_id="idle",
                 parameter="utterance-input",
                 attribute={"value": ""},
             )
