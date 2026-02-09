@@ -296,7 +296,7 @@ class OVOSHomescreenSkill(OVOSSkill):
         current_weather_report = message.data.get("report")
         if current_weather_report:
             self.gui["weather_api_enabled"] = True
-            self.gui["weather_code"] = str(current_weather_report.get("weather_code"))
+            self.gui["weather_code"] = current_weather_report.get("weather_code")
             self.gui["weather_temp"] = self._format_temperature(current_weather_report.get("weather_temp"))
         else:
             self.gui["weather_api_enabled"] = False
