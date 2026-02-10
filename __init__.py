@@ -287,6 +287,8 @@ class OVOSHomescreenSkill(OVOSSkill):
         unit = "C" if self.system_unit == "metric" else "F"
         if temperature is None:
             return f" --.-°{unit}"
+        if isinstance(temperature, str) and unit in temperature:
+            return temperature
         return f"{round(float(temperature), 1): 4.1f}°{unit}"
 
     def update_weather_response(self, message=None):
