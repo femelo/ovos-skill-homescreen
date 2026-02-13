@@ -283,6 +283,14 @@ class OVOSHomescreenSkill(OVOSSkill):
         """
         self.bus.emit(Message("skill-ovos-weather.openvoiceos.weather.request"))
 
+    def _format_temperature(self, temperature: str | float | None) -> str:
+        unit = "C" if self.system_unit == "metric" else "F"
+        if temperature is None:
+            return f" --.-°{unit}"
+        if isinstance(temperature, str) and unit in temperature:
+            return temperature
+        return f"{round(float(temperature), 1): 4.1f}°{unit}"
+
     def update_weather_response(self, message=None):
         """
         Weather Update Response
@@ -291,7 +299,7 @@ class OVOSHomescreenSkill(OVOSSkill):
         if current_weather_report:
             self.gui["weather_api_enabled"] = True
             self.gui["weather_code"] = current_weather_report.get("weather_code")
-            self.gui["weather_temp"] = current_weather_report.get("weather_temp")
+            self.gui["weather_temp"] = self._format_temperature(current_weather_report.get("weather_temp"))
         else:
             self.gui["weather_api_enabled"] = False
 

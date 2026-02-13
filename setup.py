@@ -3,9 +3,9 @@ from setuptools import setup
 import os
 from os import walk, path
 
-URL = "https://github.com/OpenVoiceOS/skill-ovos-homescreen"
+URL = "https://github.com/OpenVoiceOS/ovos-skill-homescreen"
 SKILL_CLAZZ = "OVOSHomescreenSkill"  # needs to match __init__.py class name
-PYPI_NAME = "ovos-skill-homescreen"  # pip install PYPI_NAME
+PYPI_NAME = "ovos_skill_homescreen"  # pip install PYPI_NAME
 
 
 # below derived from github url to ensure standard skill_id
@@ -65,7 +65,7 @@ def get_version():
                     '# END_VERSION_BLOCK' in line):
                 break
     version = f"{major}.{minor}.{build}"
-    if int(alpha):
+    if int(alpha or 0):
         version += f"a{alpha}"
     return version
 
@@ -86,5 +86,5 @@ setup(
     include_package_data=True,
     install_requires=get_requirements("requirements.txt"),
     keywords='ovos skill plugin',
-    entry_points={'ovos.plugin.skill': PLUGIN_ENTRY_POINT}
+    entry_points={'opm.skill': PLUGIN_ENTRY_POINT}
 )
